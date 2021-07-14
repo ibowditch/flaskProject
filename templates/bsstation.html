@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/bsstation.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+   <div class="wthgrid">
+        <div class="locdt">
+            <h2>Golden Jubilee Field Weather as at: 14/07/2021 11:45:00</h2>
+        </div>
+        <div class="sysid">
+            <h3>Bushfire Weather Display v1.0, Chris Hunter, Ku-ring-gai BFB, 2021</h3>
+        </div>
+        <div class="basic">
+            <div class="col-6 bastext">Temperature</div>
+            <div class="col-5 basnum">10.2</div>
+            <div class="col-1 basdir">↓</div>
+        </div>
+        <div class="detail">
+            <div class="col-9 dethead">KB Drought Index (0 - 203)</div>
+            <div class="col-3 dettext">23</div>
+        </div>
+        <div class="detail">
+            <div class="col-9 dethead">In 30 Days prior to 9am	Days Since</div>
+            <div class="col-3 dettext">Rain</div>
+        </div>
+        <div class="basic">
+            <div class="col-6 bastext">Humidity</div>
+            <div class="col-5 basnum">88%</div>
+            <div class="col-1 basdir">↓</div>
+        </div>
+        <div class="basic">
+            <div class="col-6 bastext">Av Wind Speed</div>
+            <div class="col-5 basnum">14 km/h</div>
+            <div class="col-1 basdir">↓</div>
+        </div>
+        <div class="basic">
+            <div class="col-6 bastext">Wind Direction</div>
+            <div class="col-5 basnum">NNE</div>
+        </div>
+        <div class="basic">
+            <div class="col-6 bastext">FFDI</div>
+            <div class="col-5 basnum">1</div>
+        </div>
+
+
+   <!--     <div class="contacts">
+            <h4>Contacts</h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2"><strong>Captain:</strong></div>
+                    <div class="col-5"> {{ view.captain }} </div>
+                    <div class="col-5">M: {{ view.captain.mContact.Mobile }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-2"><strong>President:</strong> </div>
+                    <div class="col-5"> {{ view.president }} </div>
+                    <div class="col-5">M: {{ view.president.mContact.Mobile }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-2"><strong>Address:</strong> </div>
+                    <div class="col-10"> {{ view.location }} </div>
+                </div>
+                <div class="row">
+                    <div class="col-2"><strong>Phone:</strong> </div>
+                    <div class="col-6"> {{ view.phone }} </div>
+                </div>
+            </div>
+        </div>
+        <div class="members">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-9"><strong>Membership Summary <span style="font-weight:bold; color:red">(On Duty)</span></strong></div>
+                    <div class="col-3 ml-auto align-right">
+                        <a class="calbutton " type="button" href={% url 'dashboard' %}/?next={{ request.path }}><strong>At Station</strong></a>
+                    </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-3"><strong>Field Officers: </strong></div>
+                     <div class="col-1 text-right"> {{ view.fofficers.count }} </div>
+                     <div class="col-1 text-right"><span  style="font-weight:bold; color:red" title={{ view.off_atstatl }}>({{ view.off_atstat.count }}) </span></div>
+                 </div>
+                 <div class="row">
+                     <div class="col-3"><strong>Response Drivers: </strong></div>
+                     <div class="col-1 text-right"> {{ view.drivers.count }} </div>
+                     {# title="{{ view.dr_atstat.values_list }}"  causes sql crash #}
+                     <div class="col-1 text-right"><span style="font-weight:bold; color:red" title={{ view.dr_atstatl }}>({{ view.dr_atstat.count }}) </span></div>
+                 </div>
+                 <div class="row">
+                     <div class="col-3"><strong>Village Firefighters: </strong></div>
+                     <div class="col-1 text-right"> {{ view.vf.count }} </div>
+                     <div class="col-1 text-right"><span style="font-weight:bold; color:red" title={{ view.vf_atstatl }}>({{ view.vf_atstat.count }})</span> </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-3"><strong>Chainsaw Operators:</strong> </div>
+                     <div class="col-1 text-right"> {{ view.csaw.count }} </div>
+                     <div class="col-1 text-right"><span style="font-weight:bold; color:red" title={{ view.cs_atstatl }}>({{ view.cs_atstat.count }}) </span></div>
+                 </div>
+                 <div class="row">
+                     <div class="col-3"><strong>SWR:</strong> </div>
+                     <div class="col-1 text-right"> {{ view.swr.count }} </div>
+                     <div class="col-1 text-right"><span style="font-weight:bold; color:red" title={{ view.swr_atstatl }}>({{ view.swr_atstat.count }}) </span></div>
+                 </div>
+                 <div class="row">
+                     <div class="col-3"><strong>Active Members:</strong>  </div>
+                     <div class="col-1 text-right"> {{ view.act_members.count }} </div>
+                     <div class="col-1 text-right"><span style="font-weight:bold; color:red" title={{ view.mat_stationl }}>({{ view.mat_station.count }})</span></div>
+                 </div>
+             </div>
+        </div> -->
+    </div>
+
+
+
+
+<!--
+  <div class="container-fluid" id="bsstation">
+      <div class="row">
+        <div class="col" id="locdat">Golden Jubilee Field Weather as at: 14/07/2021 11:45:00</div>
+        <div class="col" id="sysid">Bushfire Weather Display v1.0, Chris Hunter, Ku-ring-gai BFB, 2021</div>
+      </div>
+  </div> -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -18,10 +18,10 @@ class BaseModel(db.Model, AllFeaturesMixin):
 BaseModel.set_session(db.session)
 
 class Weather(BaseModel):
-    id = sa.Column(Integer, primary_key=True)
-    ts = sa.Column(DateTime, unique=False)
-    temp = sa.Column(Float, unique=False)
-    rh = sa.Column(Float, unique=False)
+    id =    sa.Column(Integer, primary_key=True)
+    ts =    sa.Column(DateTime, unique=False)
+    temp =  sa.Column(Float, unique=False)
+    rh =    sa.Column(Float, unique=False)
 
 db.create_all()
 
@@ -41,6 +41,17 @@ def hello(name):
     r = request
     return render_template('page.html', name=name)
 
+@app.route('/update', methods=['GET', 'POST'])
+def update():
+    r = request
+    tms = r.values['temp_c']
+    hds = r.values['relative_humidity']
+    tm = float(tms)
+    hd = float(hds)
+    neww = Weather.create(ts=datetime.datetime.now(), temp=tm, rh=hd)
+    return 'update'
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+

@@ -1,0 +1,38 @@
+/*#bsstation { padding: 20px; }*/
+
+/*#sysid { border:1.0pt solid black; }*/
+/*#bsstation .col { height: 15.0pt;  }*/
+
+/*#bsstation .col:not(:last-child) { border-right-width: 0; }*/
+
+/*#bsstation .row:not(:last-child) .col { border-bottom-width: 0; }*/
+
+.wthgrid    {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;                                 /* this lets events shrink to natural size. Row size is largest in row */
+    grid-gap: 25px;
+    background: #8DB4E3;
+    margin: 8pt;
+    /*grid-auto-flow: column;*/
+	/*grid-auto-rows: max-content;            !* This makes all rows the same height, and stops expansion to fill available height*/
+}
+
+@media (max-width: 768px) {
+.idxgrid { display: flex; flex-wrap: wrap; }
+}
+.wthgrid > .locdt       { grid-column: 1 / 2;    grid-row: 1 / 2;  }
+.wthgrid > .sysid       { grid-column: 2 / 3;    grid-row: 1 / 2; border-style: solid; }        /* background-color: lightsalmon; */
+.wthgrid > .basic       { grid-column: 1 / 2;    border-style: solid; display: flex; flex-wrap: wrap; background: #132D4D;}
+.wthgrid > .detail      { grid-column: 2 / 3;    border-style: solid; display: flex; flex-wrap: wrap; background: #132D4D;}
+
+.basic > .bastext { color: #EA4F43; font-size: 42.0pt; font-weight: 400; margin-top: 25px;}
+.basic > .basnum  { color: white;   font-size: 72.0pt; font-weight: 400; font-style: normal;}
+.basic > .basdir  { color: #FFC000; font-size: 72.0pt; font-weight: 400; font-style: normal;}
+
+.detail > .dethead { color: #FFC000; font-size: 30.0pt; font-weight: 400; font-style: normal;}
+.detail > .dettext { color: white;   font-size: 32.0pt; font-weight: 400; font-style: normal;}
+
+.idxgrid > .logo        { grid-column: 3 / 4;    grid-row: 1 / 2; border-style: ridge; justify-self: end;  }        /* background-color: lightsalmon; */
+.idxgrid > .officers    { grid-column: 1 / 2;    grid-row: 2 / 3; border-style: ridge; }
+.idxgrid > .events      { grid-column: 2 / 4;    grid-row: 2 / 3; border-style: ridge;   }        /* background-color: lightsalmon; */
