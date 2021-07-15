@@ -1,12 +1,64 @@
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
+.wthgrid    {
+    display: grid;
+    grid-template-columns: 1fr;
+    /*grid_template_rows: auto 72pt 30pt auto;*/
+    align-items: start;                                 /* this lets events shrink to natural size. Row size is largest in row */
+    grid-gap: 25px;
+    background: #8DB4E3;
+    margin: 8pt;
+    /*grid-auto-flow: column;*/
+	/*grid-auto-rows: max-content;            !* This makes all rows the same height, and stops expansion to fill available height*/
 }
-.one    { grid-column: 1 / 3;   grid-row: 1;      border-style: solid;}
-.two    { grid-column: 2 / 4;   grid-row: 1 / 3;  border-style: solid;}
-.three  { grid-column: 1;       grid-row: 2 / 5;  border-style: solid;}
-.four   { grid-column: 3;       grid-row: 3;      border-style: solid;}
-.five   { grid-column: 2;       grid-row: 4;      border-style: solid;}
-.six    { grid-column: 3;       grid-row: 4;      border-style: solid;}
+
+.wthgrid > .locdt       { grid-column: 1 / 2;    grid-row: 1 / 2;  }
+.wthgrid > .sysid       { grid-column: 2 / 3;    grid-row: 1 / 2; border-style: solid; }        /* background-color: lightsalmon; */
+
+
+.wrapper1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(72pt, auto);
+  width: 50%;
+  float: left;
+  background: #8DB4E3;
+  /*margin: 8pt;*/
+        /*align-items: start;                                 !* this lets events shrink to natural size. Row size is largest in row *!*/
+    /*grid-gap: 25px;*/
+    /*margin: 8pt;*/
+}
+
+.wrapper2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(32pt, auto);
+  width: 50%;
+  float: left;
+  background: #8DB4E3;
+  /*margin: 8pt;*/
+}
+
+.bastext { color: #EA4F43; font-size: 42.0pt; font-weight: 400; margin-top: 25px;}
+.basnum  { color: white;   font-size: 72.0pt; font-weight: 400; font-style: normal;}
+.basdir  { color: #FFC000; font-size: 72.0pt; font-weight: 400; font-style: normal;}
+
+.wrapper1 > div { border-style: solid; display: flex; flex-wrap: wrap; background: #132D4D; margin: 8pt;}
+
+/*.temp    { border-style: solid; display: flex; flex-wrap: wrap;  }*/
+/*.rh    { grid-column: 1;         border-style: solid;  }*/
+/*.windspeed  { grid-column: 1;         border-style: solid;}*/
+/*.winddir  { grid-column: 1;         border-style: solid;}*/
+.ffdr  { grid-column: 1;  width: 20%;       border-style: solid;}
+
+.wrapper2 > div { border-style: solid; display: flex; flex-wrap: wrap; background: #132D4D; margin: 8pt;}
+
+.dethead { color: #FFC000; font-size: 30.0pt; font-weight: 400; font-style: normal;}
+.dettext { color: white;   font-size: 32.0pt; font-weight: 400; font-style: normal;}
+
+.kbdi           { grid-column: 1 / 3;                     border-style: solid;}
+.lastrain       { grid-column: 1 / 3;   grid-row: 2 / 4;  border-style: solid;}
+.droughtfactor  { grid-column: 1 / 3;   grid-row: 5 / 6;  border-style: solid;}
+.rain9          { grid-column: 1;       grid-row: 6 / 8;  border-style: solid;}
+.maxfddi        { grid-column: 2;       grid-row: 6 / 8;  border-style: solid;}
+.firebehav      { grid-column: 1 / 3;   grid-row: 8 / 11; border-style: solid;}

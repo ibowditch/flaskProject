@@ -6,7 +6,12 @@ from sqlalchemy import Column, Integer, Text, Float, DateTime
 import dateutil.parser
 
 import logging
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
+
+
+logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+logging.warning('This will get logged to a file')
+
 
 # from systemd import journal       #TODO can't get to install systemd in this project somehow
 import logging.handlers
@@ -51,7 +56,7 @@ def update():
                    rh=float(request.values['relative_humidity']))
     db.session.add(neww)
     db.session.commit()
-    logger.info(neww)
+    logging.info(neww)
     return 'update'
 
 if __name__ == '__main__':

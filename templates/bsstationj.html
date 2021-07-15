@@ -1,60 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../static/bsstation.css">
+    <link rel="stylesheet" type="text/css" href="../static/demo.css">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-
-   <div class="wthgrid">
-        <div class="locdt">
-            <h2>Golden Jubilee Field Weather as at: 14/07/2021 11:45:00</h2>
+</head>
+<body>
+    <div>
+        <div class="wthgrid">
+            <div class="locdt">
+                <h2>Golden Jubilee Field Weather as at: 14/07/2021 11:45:00</h2>
+            </div>
+            <div class="sysid">
+                <h3>Bushfire Weather Display v1.0, Chris Hunter, Ku-ring-gai BFB, 2021</h3>
+            </div>
         </div>
-        <div class="sysid">
-            <h3>Bushfire Weather Display v1.0, Chris Hunter, Ku-ring-gai BFB, 2021</h3>
-        </div>
-        <div class="basic">
+        <div class="wrapper1">
+          <div class="temp">
             <div class="col-6 bastext">Temperature</div>
             <div class="col-5 basnum">{{ rep.temp }}</div>
             <div class="col-1 basdir">↓</div>
-        </div>
-        <div class="detail">
-            <div class="col-9 dethead">KB Drought Index (0 - 203)</div>
-            <div class="col-3 dettext">23</div>
-        </div>
-        <div class="detail">
-            <div class="col-9 dethead">In 30 Days prior to 9am	Days Since</div>
-            <div class="col-3 dettext">Rain</div>
-        </div>
-        <div class="basic">
+          </div>
+          <div class="rh">
             <div class="col-6 bastext">Humidity</div>
             <div class="col-5 basnum">{{ rep.rh }}</div>
             <div class="col-1 basdir">↓</div>
-        </div>
-        <div class="basic">
-            <div class="col-6 bastext">Av Wind Speed</div>
+          </div>
+          <div class="windspeed">
+             <div class="col-6 bastext">Av Wind Speed</div>
             <div class="col-5 basnum">14 km/h</div>
             <div class="col-1 basdir">↓</div>
-        </div>
-        <div class="basic">
+          </div>
+          <div class="winddir">
             <div class="col-6 bastext">Wind Direction</div>
             <div class="col-5 basnum">NNE</div>
-        </div>
-        <div class="basic">
+          </div>
+          <div class="ffdi">
             <div class="col-6 bastext">FFDI</div>
             <div class="col-5 basnum">1</div>
+          </div>
+          <div class="ffdr">
+            <div class="col-3 bastext">FFDR</div>
+          </div>
         </div>
+        <div class="wrapper2">
+          <div class="kbdi">
+            <div class="col-9 dethead">KB Drought Index (0 - 203)</div>
+            <div class="col-3 dettext">23</div>
+          </div>
+          <div class="lastrain">
+            <div class="dethead">In 30 Days prior to 9am	Days Since</div>
+            <div class="col-7 dethead">Last Rain Event > 2mm</div>
+            <div class="col-5 dettext">5	16.8 mm</div>
+            <div class="col-7 dethead">Last Rain Event > 10mm</div>
+            <div class="col-5 dettext">5	16.8 mm</div>
+          </div>
+          <div class="droughtfactor">
+            <div class="col-7 dethead">Drought Factor (0-10)</div>
+            <div class="col-5 dettext">5.8</div>
+          </div>
+          <div class="rain9">
+            <div class="dethead">Rain Since 9.00am</div>
+            <div class="dettext">0 mm</div>
+          </div>
+          <div class="maxfddi">
+            <div class="dethead">Max. FFDI Today</div>
+            <div class="dettext">2</div>
+          </div>
+          <div class="firebehav">
+             <div class="dethead">Fire Behaviour Predicted for Current FFDI</div>
+             <div class="dethead">(on Flat Ground with 20 t/ha Fuel Loading)	</div>
+             <div class="dethead">Rate of Spread	Flame Height	Spotting Dist.	</div>
+             <div class="dettext">0.8 m/min	0.9 m	0 km</div>
+          </div>
+        </div>
+    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+
+</body>
 </html>
