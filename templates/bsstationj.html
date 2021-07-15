@@ -13,7 +13,7 @@
     <div>
         <div class="wthgrid">
             <div class="locdt">
-                <h2>Golden Jubilee Field Weather as at: 14/07/2021 11:45:00</h2>
+                <h2>Golden Jubilee Field Weather as at: {{ rep.ts }}</h2>
             </div>
             <div class="sysid">
                 <h3>Bushfire Weather Display v1.0, Chris Hunter, Ku-ring-gai BFB, 2021</h3>
@@ -32,12 +32,12 @@
           </div>
           <div class="windspeed">
              <div class="col-6 bastext">Av Wind Speed</div>
-            <div class="col-5 basnum">14 km/h</div>
+            <div class="col-5 basnum">{{ rep.wind_sp|int }} km/h</div>
             <div class="col-1 basdir">↓</div>
           </div>
           <div class="winddir">
             <div class="col-6 bastext">Wind Direction</div>
-            <div class="col-5 basnum">NNE</div>
+            <div class="col-5 basnum">{{ rep.wind_dirc }}</div>
           </div>
           <div class="ffdi">
             <div class="col-6 bastext">FFDI</div>
